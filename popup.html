@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meeting AI</title>
+    <link rel="stylesheet" href="panel.css"> 
+</head>
+<body>
+    <div id="container">
+        <h3>🎙️ Meeting AI Assistant</h3>
+
+        <div id="controls">
+            <button id="record-btn" class="action-btn start">
+                Start Recording
+            </button>
+            <button id="stop-btn" class="action-btn stop" disabled>
+                Stop & Summarize
+            </button>
+        </div>
+
+        <hr>
+
+        <div id="dynamic-content">
+            <div id="status-view">
+                <p id="status-text">Ready to capture audio.</p>
+                <p id="chunk-info"></p>
+                
+                <div id="summary-section" style="display: none;">
+                    <h4>✅ Session Summary</h4>
+                    <p id="final-summary-output"></p>
+                    <button id="view-chat-btn" class="action-btn start">
+                        Start Chatting
+                    </button>
+                </div>
+            </div>
+
+            <div id="chat-view" style="display: none;">
+                <h4>💬 Session Chatbot</h4>
+                <div id="chat-history">
+                    </div>
+                <div id="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ask about the meeting...">
+                    <button id="send-chat-btn">Send</button>
+                    <button id="view-status-btn" class="action-btn start">
+                        View Summary
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

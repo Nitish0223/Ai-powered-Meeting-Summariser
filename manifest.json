@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Meeting Summarizer & Chatbot",
+  "version": "1.0",
+  "description": "Capture, transcribe, summarize, and chat with meeting audio using the Gemini API.",
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  },
+
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["content.js"]
+    }
+  ],
+
+ 
+  "permissions": [
+    "activeTab",
+    "tabCapture",
+    "storage",
+    "scripting"
+  ],
+
+  "host_permissions": ["https://your-backend-api.com/*"]
+}
