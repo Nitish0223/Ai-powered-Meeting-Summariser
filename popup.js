@@ -42,6 +42,14 @@ const updateUI = () => {
 };
 
 recordBtn.addEventListener('click', () => {
+  const allowed = confirmRecordingPermission();
+  if (!allowed) {
+    statusText.textContent = 'Permission required to record audio.';
+    isRecording = false;
+    updateUI();
+    return;
+  }
+
   isRecording = true;
   summarySection.style.display = 'none';
   showView('status-view');
@@ -84,6 +92,12 @@ chatInput.addEventListener('keypress', (e) => {
     sendChatBtn.click();
   }
 });
+
+function confirmRecordingPermission() {
+  return window.confirm(
+    'AI Meeting Summarizer needs to record audio from this tab. Do you allow recording?'
+  );
+}
 
 const appendChat = (sender, text) => {
   const messageDiv = document.createElement('div');

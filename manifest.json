@@ -10,7 +10,18 @@
 
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/icon.png"
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
 
   
@@ -26,8 +37,18 @@
     "activeTab",
     "tabCapture",
     "storage",
-    "scripting"
+    "scripting",
+    "offscreen"
   ],
 
-  "host_permissions": ["https://your-backend-api.com/*"]
+  "host_permissions": [
+    "http://localhost:5000/*"
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
